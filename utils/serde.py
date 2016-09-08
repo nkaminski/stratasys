@@ -19,7 +19,7 @@ def dataUnpack(st):
     return bd
 
 if __name__ == "__main__":
-    if(sys.argv[1] == 'unpack'):
+    if(sys.argv[1] == 'pack'):
         print("Unpacking material EEPROM data")
         with open(sys.argv[2],"r") as fp:
             st = fp.read()
@@ -27,7 +27,7 @@ if __name__ == "__main__":
             outData = dataUnpack(st)
             wp.write(outData)
             wp.close()
-    elif(sys.argv[1] == 'pack'):
+    elif(sys.argv[1] == 'unpack'):
         print("Packing material EEPROM data")
         with open(sys.argv[2],"rb") as fp:
             bd = fp.read()
